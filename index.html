@@ -4,8 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake And Ladder</title>
+    <link href="https://fonts.cdnfonts.com/css/knight-warrior" rel="stylesheet">
 </head>
 <body>
-    
+    <audio src="asset/Sneaky-Snitch(chosic.com).mp3" autoplay="autoplay" loop="loop"></audio>
+        <div id="status">
+            <h3>SNAKE AND LADDERS</h3>
+            <img src="asset/snake.png" alt="snake">
+            <h1>Defeat The Snakes and Climb Ladders to Capture your Throne!</h1>
+        </div>
+        <div class="board">
+        </div>
+    </div>
+    <style>
+        *{
+            font-family: 'KNIGHT WARRIOR', sans-serif;
+        }
+        body{
+            background-color: rgb(108, 195, 22);
+        }
+        .board{
+            margin: auto;
+            margin-top: 30px;
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+        }
+        #status{
+            text-align: center;
+            position: relative; 
+            color:white;
+            letter-spacing: 3px;
+        }
+        #status h3{
+          font-size: 50px;
+        }
+        #status img{
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            right: 480px;
+            top: 0px;
+
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background: orange;
+}
+    </style>
 </body>
+<script>
+    function createBoxes() {
+    var boxes="";
+    for (let i = 0; i < 10; i++) 
+    {
+             for (let j = 0; j < 10; j++) 
+             {    y=i*50;
+                  x=j*50;
+                  if((i+j)%2==0)
+                  {
+                     bg="red";
+                  }
+                 else{
+                      bg="white";
+                }
+                  boxes+=` <div class='box' style='margin:${y}px ${x}px ; background:${bg};'></div>`;
+             }
+    }
+    document.querySelector(".board").innerHTML=boxes;
+    }
+    createBoxes();
+    </script>
 </html>
