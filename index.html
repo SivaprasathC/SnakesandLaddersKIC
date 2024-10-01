@@ -7,7 +7,7 @@
     <link href="https://fonts.cdnfonts.com/css/knight-warrior" rel="stylesheet">
 </head>
 <body>
-    <audio src="asset/Sneaky-Snitch(chosic.com).mp3" autoplay="autoplay" loop="loop"></audio>
+    <audio src="asset/Sneaky-Snitch(chosic.com).mp3"></audio>
         <div id="status">
             <h3>SNAKE AND LADDERS</h3>
             <img src="asset/snake.png" alt="snake">
@@ -58,6 +58,11 @@
     </style>
 </body>
 <script>
+  window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.5;
+  audio.play();
+});
     function createBoxes() {
     var boxes="";
     for (let i = 0; i < 10; i++) 
