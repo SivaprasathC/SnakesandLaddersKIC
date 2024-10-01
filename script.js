@@ -3,7 +3,7 @@ function createBoxes() {
     for (let i = 0; i < 10; i++) 
     {
              for (let j = 0; j < 10; j++) 
-             {    y=i*50;
+             {    y=(9-i)*50;
                   x=j*50;
                   if((i+j)%2==0)
                   {
@@ -12,7 +12,13 @@ function createBoxes() {
                  else{
                       bg="white";
                 }
-                  boxes+=` <div class='box' style='margin:${y}px ${x}px ; background:${bg};'></div>`;
+                if(i%2==0){
+                    n=i*10+j+1;
+                }
+                    else{
+                    n=i*10+(10-j);
+                }
+                  boxes+=` <div class='box' style='margin:${y}px ${x}px ; background:${bg};'>${n}</div>`;
              }
     }
     document.querySelector(".board").innerHTML=boxes;
