@@ -12,7 +12,7 @@
             <h3>SNAKE AND LADDERS</h3>
             <img src="asset/snake.png" alt="snake">
             <h1>Defeat The Snakes and Climb Ladders to Capture your Throne!</h1>
-            <button onclick="myaudio()">Play Sound</button>
+            <button onclick="myaudio()" id="audiobg">Play Sound</button>
         </div>
         <div class="board">
         </div>
@@ -63,6 +63,7 @@
   const audio = document.querySelector("audio");
   audio.volume = 0.5;
   audio.play();
+document.getElementById("audiobg").value="Mute";
 };
     function createBoxes() {
     var boxes="";
