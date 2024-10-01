@@ -12,7 +12,7 @@
             <h3>SNAKE AND LADDERS</h3>
             <img src="asset/snake.png" alt="snake">
             <h1>Defeat The Snakes and Climb Ladders to Capture your Throne!</h1>
-            <button>Start</button>
+            <button onclick="myaudio()">Play Sound</button>
         </div>
         <div class="board">
         </div>
@@ -59,11 +59,11 @@
     </style>
 </body>
 <script>
-  window.addEventListener("DOMContentLoaded", event => {
+  function myaudio(){
   const audio = document.querySelector("audio");
   audio.volume = 0.5;
   audio.play();
-});
+};
     function createBoxes() {
     var boxes="";
     for (let i = 0; i < 10; i++) 
