@@ -55,3 +55,19 @@ body{
     color: white;
     border-radius: 45px;
 }
+#rolldice{
+    height: 40px;
+    width: 140px;
+    font-size: 25px;
+    background-color: rgb(141, 43, 43);
+    color: white;
+    border-radius: 45px;
+}
+#results{
+    text-align: center;
+}
+#results h1{
+    font-size: 60px; 
+    color:black;
+}
+

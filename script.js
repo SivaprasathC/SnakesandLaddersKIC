@@ -21,8 +21,37 @@ function grids() {
     document.querySelector(".board").innerHTML=boxes;
 }
 grids();
+
+//==================================================================================================================================
+
 coin=document.querySelectorAll(".box")
-coin[1].innerHTML= '<img src="asset/squid circle.png" alt="smurf">'
+var start=1
+currentstep=0
+function rolldice(){ 
+        var rollmp3 = new Audio("asset/dice-roll-sound.mp3");
+        rollmp3.play();
+        newstep=Math.floor(Math.random() * 6) + 1;
+        document.getElementById("dice-res").innerHTML=newstep
+        currentstep=currentstep+newstep
+        move(currentstep)
+}
+function move(step){
+    stop=step
+    function play()
+    {
+    if(start!=1)
+    {
+    coin[start-2].innerHTML=`${start-1}`;
+    }
+    coin[start-1].innerHTML= '<img src="asset/squid circle.png" alt="smurf">'
+    if(start<stop){
+    start++;
+    }
+    }
+    setInterval(play,1000)
+}
+// coin[1].innerHTML= '<img src="asset/squid circle.png" alt="smurf">'
+//============================================================================================================================================
 
 function myaudio(){
     const state=document.getElementById("audiobg").innerText;
@@ -44,3 +73,4 @@ function myaudio(){
         document.getElementById("audiobg").innerText="Play Sound";
     }
   };
+  //===================================================================================================================
