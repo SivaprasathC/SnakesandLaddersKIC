@@ -1,29 +1,28 @@
-function createBoxes() {
+function grids() {
     var boxes="";
     for (let i = 0; i < 10; i++) 
     {
              for (let j = 0; j < 10; j++) 
-             {    y=(9-i)*50;
-                  x=j*50;
-                  if((i+j)%2==0)
-                  {
-                     bg="red";
+             {    x=(9-i)*50;
+                  y=j*50;
+                  if(j%2==0){
+                    col="red"
                   }
-                 else{
-                      bg="white";
-                }
-                if(i%2==0){
-                    n=i*10+j+1;
-                }
-                    else{
-                    n=i*10+(10-j);
-                }
-                  boxes+=` <div class='box' style='margin:${y}px ${x}px ; background:${bg};'>${n}</div>`;
+                  else{
+                    col="white"
+                  }
+                  n=i*10+j+1
+                  if(i%2==1){
+                    y=(9-j)*50
+                  }
+                  boxes+=` <div class='box' style='margin-top:${x}px; margin-left: ${y}px ; background:${col};'>${n}</div>`;
              }
-    }
+    }     
     document.querySelector(".board").innerHTML=boxes;
 }
-createBoxes();
+grids();
+coin=document.querySelectorAll(".box")
+coin[1].innerHTML= '<img src="asset/squid circle.png" alt="smurf">'
 
 function myaudio(){
     const state=document.getElementById("audiobg").innerText;
