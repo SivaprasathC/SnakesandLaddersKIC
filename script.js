@@ -48,6 +48,8 @@ function rolldice(){
         // newstep=Math.floor(Math.random() * 6) + 1;
         // document.getElementById("dice-res").innerHTML=newstep     
 }
+
+
 function move(step){
     stop=step
     function play()
