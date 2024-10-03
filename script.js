@@ -18,6 +18,9 @@ function grids() {
                   boxes+=` <div class='box' style='margin-top:${x}px; margin-left: ${y}px ; background:${col};'>${n}</div>`;
              }
     }     
+    boxes+=`<div style=" position: absolute;">
+    <img src="asset/SnakesNladders.png" alt="">
+</div>`
     document.querySelector(".board").innerHTML=boxes;
 }
 grids();
