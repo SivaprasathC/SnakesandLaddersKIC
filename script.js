@@ -30,10 +30,20 @@ currentstep=0
 function rolldice(){ 
         var rollmp3 = new Audio("asset/dice-roll-sound.mp3");
         rollmp3.play();
-        newstep=Math.floor(Math.random() * 6) + 1;
-        document.getElementById("dice-res").innerHTML=newstep
-        currentstep=currentstep+newstep
-        move(currentstep)
+        x=1;
+        animate=setInterval(()=>{
+          newstep=Math.floor(Math.random() * 6) + 1;
+          document.getElementById("dice-res").innerHTML=newstep
+        if(x>10)
+          {
+           clearInterval(animate);
+           currentstep=currentstep+newstep
+            move(currentstep)
+          }
+           x++; I
+        },100);
+        // newstep=Math.floor(Math.random() * 6) + 1;
+        // document.getElementById("dice-res").innerHTML=newstep     
 }
 function move(step){
     stop=step
@@ -43,7 +53,7 @@ function move(step){
     {
     coin[start-2].innerHTML=`${start-1}`;
     }
-    coin[start-1].innerHTML= '<img src="asset/squid circle.png" alt="smurf">'
+    coin[start-1].innerHTML= '<img src="asset/squid circle.png" alt="squid">'
     if(start<stop){
     start++;
     }
