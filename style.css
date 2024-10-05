@@ -12,7 +12,7 @@ body{
     width: 500px;
     height: 500px;
     border: 2px solid black;
-    position: relative; 
+    position:relative; 
 }
 #status{
     text-align: center;
@@ -60,6 +60,7 @@ body{
     background-color: rgb(141, 43, 43);
     color: white;
     border-radius: 45px;
+    margin-top: 10px;
 }
 #results{
     text-align: center;
@@ -78,3 +79,33 @@ body{
     left: 2px;
    
 } 
+.boxp2{
+    width: 50px;
+    height: 50px;
+    background:transparent;
+    position: absolute; 
+} 
+.boxp2 img{ 
+    width: 32px;
+    height: 32px;
+}
+.boardp2{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    top: 0px;
+}
+.container{
+    position: relative;
+}
+#roll-status{
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+}
+#roll-status h1{
+    letter-spacing: 10px;
+}

@@ -6,8 +6,8 @@
     <title>Snake And Ladder</title>
     <link href="https://fonts.cdnfonts.com/css/knight-warrior" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="rollnmove.js"></script>
     <script src="script.js"></script>
+    <script src="scriptp2.js"></script>
     </head>
 <body>
     <audio src="asset/Sneaky-Snitch(chosic.com).mp3"></audio>
@@ -17,14 +17,17 @@
             <h1>Defeat The Snakes and Climb Ladders to Capture your Throne!</h1>
             <button onclick="myaudio()" id="audiobg">Play Sound</button>
         </div>
-        <div class="board">
+        <div class="container">
+            <div class="board">
+            </div>
+            <div class="boardp2"></div>
         </div>
+        
         <div id="results">
                 <h1 id="dice-res"></h1>
-             <button onclick="rolldice()" id="rolldice">Roll Dice</button>
+             <button onclick="decide()" id="rolldice">Roll Dice</button>
         </div>
         <div id="roll-status">
-                  
         </div>
         
     <script src="script.js"></script>
