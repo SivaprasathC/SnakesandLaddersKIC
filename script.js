@@ -46,7 +46,7 @@ function myaudio(){
       document.getElementById("audiobg").innerText="Play Sound";
   }
 };
-var toggle=2
+var toggle=Math.floor(Math.random() * 6) + 1
 function decide(){
      if((toggle%2)==0){
       toggle=toggle+1
