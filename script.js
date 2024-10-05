@@ -27,10 +27,11 @@ grids();
 
 //=========================================================================================================================
 
-coin=document.querySelectorAll(".box") 
+var coin=document.querySelectorAll(".box") 
 var start=1
-currentstep=0
-function rolldice(){ 
+var currentstep=0
+function rolldice()
+{        
           document.getElementById("rolldice").disabled = true;
           setTimeout(function() {
           document.getElementById("rolldice").disabled = false;
@@ -45,28 +46,33 @@ function rolldice(){
           newstep=Math.floor(Math.random() * 6) + 1;
           document.getElementById("dice-res").innerHTML=newstep 
         if(x>10)
-          {
+        {
            clearInterval(animate);
-           if(currentstep==95 && (newstep==6)){
+           if(currentstep==95 && (newstep==6))
+            {
             newstep=0
             document.getElementById("dice-res").innerHTML="No Move"
-        }
-        if(currentstep==96 && (newstep==5||newstep==6)){
-          newstep=0
-          document.getElementById("dice-res").innerHTML="No Move"
-      }
-      if(currentstep==97 && (newstep==4||newstep==5||newstep==6)){
-        newstep=0
-        document.getElementById("dice-res").innerHTML="No Move"
-    }
-    if(currentstep==98 &&(newstep==3||newstep==4||newstep==5||newstep==6)){
-      newstep=0
-      document.getElementById("dice-res").innerHTML="No Move"
-  }
-  if(currentstep==99 &&(newstep==2||newstep==3||newstep==4||newstep==5||newstep==6)){
-    newstep=0
-    document.getElementById("dice-res").innerHTML="No Move"
-}
+            }
+           else if(currentstep==96 && (newstep==5||newstep==6))
+            {
+              newstep=0
+              document.getElementById("dice-res").innerHTML="No Move"
+            }
+           else if(currentstep==97 && (newstep==4||newstep==5||newstep==6))
+              {
+                newstep=0
+               document.getElementById("dice-res").innerHTML="No Move"
+             }
+           else if(currentstep==98 &&(newstep==3||newstep==4||newstep==5||newstep==6))
+              {
+                    newstep=0
+                    document.getElementById("dice-res").innerHTML="No Move"
+              }
+           else if(currentstep==99 &&(newstep==2||newstep==3||newstep==4||newstep==5||newstep==6))
+            {
+                    newstep=0
+                    document.getElementById("dice-res").innerHTML="No Move"
+            }
 // console.log((currentstep==98) && (newstep==3||newstep==4||newstep==5||newstep==6))
            beforestate=currentstep
            currentstep=currentstep+newstep
@@ -74,84 +80,98 @@ function rolldice(){
            if(currentstep==100){
           
                   document.getElementById("dice-res").innerHTML="Won"
+                  move(currentstep)
                   winsound.play();
                   setTimeout(function() { location.reload(1); }, 5000);
            }
-          else if(currentstep==17 ){  //snake or ladder box actual
+           else if(currentstep==17 )
+            {  //snake or ladder box actual
                    
                   coin[35].innerHTML= '<img src="asset/squid circle.png" alt="squid">'  //resultbox index(box -1)
-                  coin[beforestate-1].innerHTML=`${beforestate} `  //replacd old box index with prev number(actual box number)
+                  coin[16-newstep].innerHTML=`${17-newstep} ` //replacd old box index with prev number(actual box number)
                   currentstep=36   //setting new pos
+                  start=36
                   ladderhur.play();
            }
 
-           else if(currentstep==33 ){  
+           else if(currentstep==33 )
+            {  
         
             coin[14].innerHTML= '<img src="asset/squid circle.png" alt="squid">'  
-            coin[beforestate-1].innerHTML=`${beforestate} ` 
+            coin[32-newstep].innerHTML=`${33-newstep} `
             currentstep=15 
+            start=15
             snakeahh.play();
            }
 
-           else if(currentstep==48 ){  
+           else if(currentstep==48 )
+            {  
            
                   coin[69].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
-                  coin[beforestate-1].innerHTML=`${beforestate} ` 
+                  coin[47-newstep].innerHTML=`${48-newstep} ` 
                   currentstep=70  
+                  start=70
                   ladderhur.play();
              }
-             else if(currentstep==79){  
+           else if(currentstep==79)
+              {  
            
                  coin[43].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
-                 coin[beforestate-1].innerHTML=`${beforestate} ` 
+                 coin[78-newstep].innerHTML=`${79-newstep} `
                  currentstep=44
+                 start=44
                  snakeahh.play();
               }
 
-              else if(currentstep==55 ){
+           else if(currentstep==55 ){
             
                   coin[26].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
-                  coin[beforestate-1].innerHTML=`${beforestate} ` 
+                  coin[54-newstep].innerHTML=`${55-newstep} `
                   currentstep=27
+                  start=27
                   snakeahh.play();
               }
 
-              else if(currentstep==56){  
+           else if(currentstep==56){  
             
                   coin[76].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
-                  coin[beforestate-1].innerHTML=`${beforestate} ` 
+                  coin[55-newstep].innerHTML=`${56-newstep} `
                   currentstep=77 
+                  start=77
                   ladderhur.play();
                }
 
-               else if(currentstep==62 ){   
+          else if(currentstep==62 ){   
         
                   coin[19].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
-                  coin[beforestate-1].innerHTML=`${beforestate} ` 
+                  coin[61-newstep].innerHTML=`${62-newstep} `
                   currentstep=20   
+                  start=20
                   snakeahh.play();
                 }
 
-                else if(currentstep==73 ){  
+          else if(currentstep==73 ){  
             
                    coin[93].innerHTML= '<img src="asset/squid circle.png" alt="squid">'  
-                   coin[beforestate-1].innerHTML=`${beforestate} `  
+                   coin[72-newstep].innerHTML=`${73-newstep} `  
                    currentstep=94  
+                    start=94
                    ladderhur.play();
               }
 
-              else if(currentstep==96 ){ 
+          else if(currentstep==96 ){ 
         
                   coin[75].innerHTML= '<img src="asset/squid circle.png" alt="squid">'   
-                  coin[beforestate-1].innerHTML=`${beforestate} ` 
-                  currentstep=76  
+                 coin[95-newstep].innerHTML=`${96-newstep} `
+                  currentstep=76
+                  start=76  
                   snakeahh.play();
-                    }
-           else{
-            move(currentstep)
-           }
-           
-          }
+                }
+          
+              
+                    move(currentstep)
+             
+        }
            x++;   
         },100);
         // newstep=Math.floor(Math.random() * 6) + 1;
@@ -159,7 +179,9 @@ function rolldice(){
 }
 
  
-function move(step){
+function move(step)
+{    console.log("start",start)
+     console.log("stop",step)
     stop=step
     function play()
     {
@@ -168,7 +190,8 @@ function move(step){
     coin[start-2].innerHTML=`${start-1}`;
     }
     coin[start-1].innerHTML= '<img src="asset/squid circle.png" alt="squid">'
-    if(start<stop){
+    if(start<stop)
+    {
     start++;
     }
     }
