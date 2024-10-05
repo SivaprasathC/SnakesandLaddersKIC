@@ -6,7 +6,7 @@ function grids() {
              {    x=(9-i)*50;
                   y=j*50;
                   if(j%2==0){
-                    col="#68a886"
+                    col="#d04c3e"
                   }
                   else{
                     col="white"
@@ -87,7 +87,7 @@ function rolldice()
            else if(currentstep==17 )
             {  //snake or ladder box actual
                    
-                  coin[35].innerHTML= '<img src="asset/squid circle.png" alt="squid">'  //resultbox index(box -1)
+                  coin[35].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">'  //resultbox index(box -1)
                   coin[16-newstep].innerHTML=`${17-newstep} ` //replacd old box index with prev number(actual box number)
                   currentstep=36   //setting new pos
                   start=36
@@ -97,7 +97,7 @@ function rolldice()
            else if(currentstep==33 )
             {  
         
-            coin[14].innerHTML= '<img src="asset/squid circle.png" alt="squid">'  
+            coin[14].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">'  
             coin[32-newstep].innerHTML=`${33-newstep} `
             currentstep=15 
             start=15
@@ -107,7 +107,7 @@ function rolldice()
            else if(currentstep==48 )
             {  
            
-                  coin[69].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
+                  coin[69].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">' 
                   coin[47-newstep].innerHTML=`${48-newstep} ` 
                   currentstep=70  
                   start=70
@@ -116,7 +116,7 @@ function rolldice()
            else if(currentstep==79)
               {  
            
-                 coin[43].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
+                 coin[43].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">' 
                  coin[78-newstep].innerHTML=`${79-newstep} `
                  currentstep=44
                  start=44
@@ -125,7 +125,7 @@ function rolldice()
 
            else if(currentstep==55 ){
             
-                  coin[26].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
+                  coin[26].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">' 
                   coin[54-newstep].innerHTML=`${55-newstep} `
                   currentstep=27
                   start=27
@@ -134,7 +134,7 @@ function rolldice()
 
            else if(currentstep==56){  
             
-                  coin[76].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
+                  coin[76].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">' 
                   coin[55-newstep].innerHTML=`${56-newstep} `
                   currentstep=77 
                   start=77
@@ -143,7 +143,7 @@ function rolldice()
 
           else if(currentstep==62 ){   
         
-                  coin[19].innerHTML= '<img src="asset/squid circle.png" alt="squid">' 
+                  coin[19].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">' 
                   coin[61-newstep].innerHTML=`${62-newstep} `
                   currentstep=20   
                   start=20
@@ -152,7 +152,7 @@ function rolldice()
 
           else if(currentstep==73 ){  
             
-                   coin[93].innerHTML= '<img src="asset/squid circle.png" alt="squid">'  
+                   coin[93].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">'  
                    coin[72-newstep].innerHTML=`${73-newstep} `  
                    currentstep=94  
                     start=94
@@ -161,7 +161,7 @@ function rolldice()
 
           else if(currentstep==96 ){ 
         
-                  coin[75].innerHTML= '<img src="asset/squid circle.png" alt="squid">'   
+                  coin[75].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">'   
                  coin[95-newstep].innerHTML=`${96-newstep} `
                   currentstep=76
                   start=76  
@@ -189,7 +189,7 @@ function move(step)
     {
     coin[start-2].innerHTML=`${start-1}`;
     }
-    coin[start-1].innerHTML= '<img src="asset/squid circle.png" alt="squid">'
+    coin[start-1].innerHTML= '<img src="asset/hulk 4848.png" alt="squid">'
     if(start<stop)
     {
     start++;
@@ -197,7 +197,7 @@ function move(step)
     }
     setInterval(play,200)
 }
-// coin[1].innerHTML= '<img src="asset/squid circle.png" alt="smurf">'
+// coin[1].innerHTML= '<img src="asset/hulk 4848.png" alt="smurf">'
 //============================================================================================================================================
 
 
