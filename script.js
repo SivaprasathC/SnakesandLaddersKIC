@@ -6,7 +6,7 @@ function grids() {
              {    x=(9-i)*50;
                   y=j*50;
                   if(j%2==0){
-                    col="red"
+                    col="green"
                   }
                   else{
                     col="white"
