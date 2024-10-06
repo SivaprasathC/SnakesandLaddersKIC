@@ -6,7 +6,7 @@ if (localStorage.supermanscore==undefined){
 }
 document.getElementById("scoreres").innerHTML=`<table>
     <tr>
-      <th>PLAYER NAME</th>
+      <th>PLAYER</th>
       <th>SCORE</th>
     </tr>
     <tr>
@@ -144,7 +144,7 @@ function rolldice()
                   localStorage.hulkscore=JSON.stringify(newscore)
                   document.getElementById("scoreres").innerHTML=`<table>
     <tr>
-      <th>PLAYER NAME</th>
+      <th>PLAYER</th>
       <th>SCORE</th>
     </tr>
     <tr>
@@ -361,7 +361,7 @@ function rolldice2()
                   localStorage.supermanscore=JSON.stringify(newscore2)
                   document.getElementById("scoreres").innerHTML=`<table>
     <tr>
-      <th>PLAYER NAME</th>
+      <th>PLAYER</th>
       <th>SCORE</th>
     </tr>
     <tr>
