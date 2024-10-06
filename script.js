@@ -1,3 +1,23 @@
+if (localStorage.hulkscore==undefined){
+              localStorage.hulkscore="0"
+}
+if (localStorage.supermanscore==undefined){
+  localStorage.supermanscore="0"
+}
+document.getElementById("scoreres").innerHTML=`<table>
+    <tr>
+      <th>PLAYER NAME</th>
+      <th>SCORE</th>
+    </tr>
+    <tr>
+      <td>HULK</td>
+      <td>${localStorage.hulkscore}</td>
+    </tr>
+    <tr>
+      <td>SUPERMAN</td>
+      <td>${localStorage.supermanscore}</td>
+    </tr>
+  </table>`
 function grids() {
     var boxes="";
     for (let i = 0; i < 10; i++) 
@@ -46,7 +66,7 @@ function myaudio(){
       document.getElementById("audiobg").innerText="Play Sound";
   }
 };
-var toggle=2
+var toggle=Math.floor(Math.random() * 2) + 1
 function decide(){
      if((toggle%2)==0){
       toggle=toggle+1
@@ -119,6 +139,23 @@ function rolldice()
                   document.getElementById("dice-res").innerHTML="HULK WON"
                   move(currentstep)
                   winsound.play();
+                  var newscore=parseInt(localStorage.hulkscore)
+                  newscore=newscore+1
+                  localStorage.hulkscore=JSON.stringify(newscore)
+                  document.getElementById("scoreres").innerHTML=`<table>
+    <tr>
+      <th>PLAYER NAME</th>
+      <th>SCORE</th>
+    </tr>
+    <tr>
+      <td>HULK</td>
+      <td>SUPER MAN</td>
+    </tr>
+    <tr>
+      <td>${localStorage.hulkscore}</td>
+      <td>${localStorage.hulkscore}</td>
+    </tr>
+  </table>`
                   setTimeout(function() { location.reload(1); }, 5000);
            }
            else if(currentstep==17 )
@@ -264,6 +301,7 @@ gridsp2()
 var coin2=document.querySelectorAll(".boxp2") 
 var start2=1
 var currentstep2=0
+var supermanscore=0
 function player2() {
 rolldice2()
 
@@ -318,6 +356,23 @@ function rolldice2()
                   document.getElementById("dice-res").innerHTML="S-Man Won"
                   move2(currentstep2)
                   winsound2.play();
+                  var newscore2=parseInt(localStorage.supermanscore)
+                  newscore2=newscore2+1
+                  localStorage.supermanscore=JSON.stringify(newscore2)
+                  document.getElementById("scoreres").innerHTML=`<table>
+    <tr>
+      <th>PLAYER NAME</th>
+      <th>SCORE</th>
+    </tr>
+    <tr>
+      <td>HULK</td>
+      <td>SUPER MAN</td>
+    </tr>
+    <tr>
+      <td>${localStorage.hulkscore}</td>
+      <td>${localStorage.hulkscore}</td>
+    </tr>
+  </table>`
                   setTimeout(function() { location.reload(1); }, 5000);
            }
            else if(currentstep2==17 )

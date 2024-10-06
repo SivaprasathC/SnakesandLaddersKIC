@@ -109,3 +109,15 @@ body{
 #roll-status h1{
     letter-spacing: 10px;
 }
+#scoreres{
+    text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    margin-top: 13px;
+    font-size: 17px;
+
+}
+table,th,td{
+    border: 1px solid white;
+    margin: auto;
+  }
