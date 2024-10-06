@@ -136,7 +136,7 @@ function rolldice()
           //  console.log(currentstep)
            if(currentstep==100){
           
-                  document.getElementById("dice-res").innerHTML="HULK WON"
+                  document.getElementById("dice-res").innerHTML="HULK WON 🧌"
                   move(currentstep)
                   winsound.play();
                   var newscore=parseInt(localStorage.hulkscore)
@@ -353,7 +353,7 @@ function rolldice2()
           //  console.log(currentstep2)
            if(currentstep2==100){
           
-                  document.getElementById("dice-res").innerHTML="S-Man Won"
+                  document.getElementById("dice-res").innerHTML="SuperMan Won🦸🏻‍♂️"
                   move2(currentstep2)
                   winsound2.play();
                   var newscore2=parseInt(localStorage.supermanscore)
