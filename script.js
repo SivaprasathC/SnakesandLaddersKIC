@@ -149,11 +149,11 @@ function rolldice()
     </tr>
     <tr>
       <td>HULK</td>
-      <td>SUPER MAN</td>
+      <td>${localStorage.hulkscore}</td>
     </tr>
     <tr>
-      <td>${localStorage.hulkscore}</td>
-      <td>${localStorage.hulkscore}</td>
+      <td>SUPERMAN</td>
+      <td>${localStorage.supermanscore}</td>
     </tr>
   </table>`
                   setTimeout(function() { location.reload(1); }, 5000);
