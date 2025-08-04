@@ -2,36 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="596, initial-scale=0.8,maximum-scale=0.8, user-scalable=0">
-    <title>Snake And Ladder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snake And Ladder - Multiplayer</title>
     <link href="https://fonts.cdnfonts.com/css/knight-warrior" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script src="scriptp2.js"></script>
-    </head>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
 <body>
-    <audio src="asset/Sneaky-Snitch(chosic.com).mp3"></audio>
+    <audio id="bgAudio" src="asset/Sneaky-Snitch(chosic.com).mp3" loop></audio>
+    
+    <!-- Main Menu -->
+    <div id="mainMenu" class="screen">
         <div id="status">
             <h3>SNAKE AND LADDERS</h3>
             <img src="asset/snake.png" alt="snake">
-            <h1>Defeat The Snakes and Climb Ladders to Capture your Throne!</h1>
-            <button onclick="myaudio()" id="audiobg">Play Sound</button>
+            <h1>Multiplayer Real-time Game!</h1>
+            <button onclick="toggleAudio()" id="audiobg">Play Sound</button>
         </div>
-        <div class="container">
-            <div class="board">
+        
+        <div class="menu-container">
+            <div class="player-input">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="15">
             </div>
-            <div class="boardp2"></div>
+            
+            <div class="menu-buttons">
+                <button onclick="createRoom()" id="createBtn">Create Room</button>
+                <button onclick="showJoinRoom()" id="joinBtn">Join Room</button>
+            </div>
+            
+            <div id="joinRoomSection" class="hidden">
+                <input type="text" id="roomCode" placeholder="Enter room code" maxlength="6">
+                <button onclick="joinRoom()" id="joinRoomBtn">Join</button>
+                <button onclick="hideJoinRoom()" id="cancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waiting Room -->
+    <div id="waitingRoom" class="screen hidden">
+        <div id="status">
+            <h3>WAITING ROOM</h3>
+            <div id="roomInfo">
+                <h2>Room Code: <span id="displayRoomCode"></span></h2>
+                <p>Share this code with your friend!</p>
+            </div>
+        </div>
+        
+        <div id="playersList">
+            <h3>Players:</h3>
+            <div id="playersContainer"></div>
+        </div>
+        
+        <button id="startGameBtn" class="hidden" onclick="startGame()">Start Game</button>
+        <div id="waitingMessage">Waiting for another player...</div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen hidden">
+        <div id="gameStatus">
+            <h3>SNAKE AND LADDERS</h3>
+            <div id="currentTurn"></div>
+        </div>
+        
+        <div class="container">
+            <div class="board" id="gameBoard"></div>
+            <div class="boardp2" id="player2Board"></div>
         </div>
         
         <div id="results">
-                <h1 id="dice-res"></h1>
-             <button onclick="decide()" id="rolldice">Roll Dice</button>
-        </div>
-        <div id="roll-status">
-        </div>
-        <div id="scoreres">
+            <h1 id="dice-res">Ready to Roll!</h1>
+            <button onclick="rollDice()" id="rolldice">Roll Dice</button>
         </div>
         
-    <script src="script.js"></script>
+        <div id="playersInfo">
+            <div class="player-info">
+                <span id="player1Name">Player 1</span>
+                <span id="player1Position">Position: 1</span>
+            </div>
+            <div class="player-info">
+                <span id="player2Name">Player 2</span>
+                <span id="player2Position">Position: 1</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen hidden">
+        <div id="status">
+            <h3>GAME OVER</h3>
+            <h1 id="winnerMessage"></h1>
+            <button onclick="backToMenu()" id="backToMenuBtn">Back to Menu</button>
+        </div>
+    </div>
+
+    <!-- Error Messages -->
+    <div id="errorMessage" class="hidden"></div>
+
+    <script src="client.js"></script>
 </body>
 </html>

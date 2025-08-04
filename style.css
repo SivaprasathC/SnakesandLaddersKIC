@@ -1,122 +1,365 @@
-*{
+* {
     font-family: 'KNIGHT WARRIOR', sans-serif;
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #152737;
+    color: white;
+    overflow-x: hidden;
 }
-.board{
-    margin: auto;
-    margin-top: 15px;
-    width: 500px;
-    height: 500px;
-    border: 2px solid black;
-    position:relative; 
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-#status{
+
+.hidden {
+    display: none !important;
+}
+
+/* Status Section */
+#status {
     text-align: center;
-    color:white;
+    color: white;
     letter-spacing: 3px;
-    margin-top: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
-#status h3{
-  font-size: 50px;
+
+#status h3 {
+    font-size: clamp(24px, 8vw, 50px);
+    margin-bottom: 10px;
 }
-#status img{
+
+#status h1 {
+    font-size: clamp(16px, 4vw, 24px);
+    margin: 20px 0;
+    font-weight: normal;
+}
+
+#status img {
     width: 60px;
     height: 60px;
-    right: 50%;
-    /* top: 32px; */
+}
 
+/* Menu Styles */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
 }
-.box{
-    width: 50px;
-    line-height: 50px;
-    background: orange;
-    position: absolute; 
+
+.player-input input {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #d04c3e;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     text-align: center;
+}
+
+.player-input input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #d04c3e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    min-width: 180px;
+}
+
+button:hover {
+    background-color: #b8392c;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#joinRoomSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #d04c3e;
+    border-radius: 15px;
+    background: rgba(208, 76, 62, 0.1);
+}
+
+#joinRoomSection input {
+    width: 200px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #d04c3e;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Waiting Room */
+#roomInfo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#roomInfo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#roomInfo span {
+    color: #4CAF50;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#playersList {
+    margin: 30px 0;
+    text-align: center;
+}
+
+#playersList h3 {
+    margin-bottom: 15px;
     font-size: 20px;
-    
-} 
-.box img{
-    
-    width: 32px;
-    height: 32px;
 }
-#audiobg{
-    height: 40px;
-    width: 140px;
-    font-size: 25px;
-    background-color: rgb(141, 43, 43);
-    color: white;
-    border-radius: 45px;
+
+.player-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-width: 250px;
 }
-#rolldice{
-    height: 70px;
-    width: 180px;
-    font-size: 25px;
-    background-color: rgb(141, 43, 43);
-    color: white;
-    border-radius: 45px;
-    margin-top: 10px;
+
+.player-role {
+    font-size: 14px;
+    color: #4CAF50;
 }
-#results{
+
+#waitingMessage {
+    color: #ff6b6b;
+    font-size: 18px;
     text-align: center;
 }
-#results h1{
-    font-size: 60px; 
-    color:white;
+
+/* Game Board */
+.container {
+    position: relative;
+    margin: 20px auto;
 }
-.p1{
-    position: absolute;
-    right: 2px;
-   
-} 
-.p1{
-    position: absolute;
-    left: 2px;
-   
-} 
-.boxp2{
-    width: 50px;
-    height: 50px;
-    background:transparent;
-    position: absolute; 
-} 
-.boxp2 img{ 
-    width: 32px;
-    height: 32px;
-}
-.boardp2{
+
+.board, .boardp2 {
     width: 500px;
     height: 500px;
     border: 2px solid black;
-    position: absolute;
-    left: 50%;
-    margin-left: -250px;
-    top: 0px;
-}
-.container{
     position: relative;
+    margin: 0 auto;
 }
-#roll-status{
-    text-align: center;
-    color: white;
-    margin-top: 5px;
-}
-#roll-status h1{
-    letter-spacing: 10px;
-}
-#scoreres{
-    text-align: center;
-    color: white;
-    letter-spacing: 3px;
-    margin-top: 13px;
-    font-size: 17px;
 
+.boardp2 {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-table,th,td{
-    margin: auto;
-  }
+
+.box, .boxp2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.box {
+    background: orange;
+}
+
+.boxp2 {
+    background: transparent;
+}
+
+.box img, .boxp2 img {
+    width: 32px;
+    height: 32px;
+    margin-top: 9px;
+}
+
+/* Game Status */
+#gameStatus {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#currentTurn h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#currentTurn p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Results Section */
+#results {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#results h1 {
+    font-size: clamp(24px, 6vw, 48px);
+    color: white;
+    margin-bottom: 15px;
+}
+
+#rolldice {
+    font-size: 20px;
+    padding: 15px 30px;
+    min-width: 150px;
+}
+
+/* Players Info */
+#playersInfo {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-width: 150px;
+}
+
+.player-info span:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Error Messages */
+#errorMessage {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6b6b;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        transform: scale(0.8);
+        margin: 10px auto;
+    }
+    
+    .board, .boardp2 {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .box, .boxp2 {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+    }
+    
+    .box img, .boxp2 img {
+        width: 24px;
+        height: 24px;
+        margin-top: 8px;
+    }
+    
+    #playersInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-buttons {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        transform: scale(0.6);
+    }
+    
+    .screen {
+        padding: 10px;
+    }
+    
+    button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+    
+    .player-input input {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+/* Game Over Screen */
+#gameOverScreen #status h1 {
+    font-size: clamp(24px, 8vw, 48px);
+    color: #4CAF50;
+    margin: 30px 0;
+    text-align: center;
+}
+
+#backToMenuBtn {
+    margin-top: 20px;
+    font-size: 18px;
+}

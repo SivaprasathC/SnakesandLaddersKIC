@@ -1,0 +1,23 @@
+{
+  "name": "snake-ladder-multiplayer",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer Snake and Ladder game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4",
+    "uuid": "^9.0.1"
+  },
+  "keywords": [
+    "snake-ladder",
+    "multiplayer",
+    "websocket",
+    "game"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
